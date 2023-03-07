@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1678081133 "/home/david/semestre_2023/seminario_modelación/practicas/practica01/main.tex" "main.pdf" "main" 1678081133
-  "/home/david/semestre_2023/seminario_modelación/practicas/practica01/main.tex" 1678081132 605 06f2d9c5ac1b0f1a050ff2c202702db0 ""
+["pdflatex"] 1678169093 "/home/david/semestre_2023/seminario_modelación/practicas/practica01/main.tex" "main.pdf" "main" 1678169094
+  "/home/david/semestre_2023/seminario_modelación/practicas/practica01/main.tex" 1678169093 1883 6f0941cc102610a0288b8c3362d0a802 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1650183167 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1650183167 1288 655e228510b4c2a1abe905c368440826 ""
@@ -49,8 +49,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1668613036 336600 6f90c65e159aaf8faaa6ea56bf6655c4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1668613011 2927660 585043b883a99dc67de3dff5d9b43c36 ""
   "Portada.pdf" 1678080284 332209 5c1c81db09a4dc1961b3ed9fc9c607fc ""
-  "main.aux" 1678081133 276 cfded1e150f39fa521d07b9e9460609f "pdflatex"
-  "main.tex" 1678081132 605 06f2d9c5ac1b0f1a050ff2c202702db0 ""
+  "main.aux" 1678169094 276 cfded1e150f39fa521d07b9e9460609f "pdflatex"
+  "main.tex" 1678169093 1883 6f0941cc102610a0288b8c3362d0a802 ""
   (generated)
   "main.aux"
   "main.log"
