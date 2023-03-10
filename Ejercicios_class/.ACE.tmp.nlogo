@@ -1,88 +1,73 @@
 globals[
-  fila
-  decimal
-  condicion
-  cociente
-  div
-  temp
-  iii
-  iio
-  ioi
-  ioo
-  oii
-  oio
-  ooi
-  ooo
+ fila
+ ;iii
+ ;iio
+ ;ioi
+ ;ioo
+ ;oii
+ ;oio
+ ;ooi
+ ;ooo
 ]
 
-patches-own [izquierda centro derecha] ;variables de los patches.
+patches-own [izquierda centro derecha] ;variables de los patches
 
 to setup
   clear-all
+  set fila max-pycor ;patch de hasta rriba en medio prendido sera la fila
+  ask patch 0 max-pycor [set pcolor orange] ;solo prendemos ese patch
+  ; Regla 30 00011110
+  ;set iii 0
+  ;set iio 0
+  ;set ioi 0
+  ;set ioo 1
+  ;set oii 1
+  ;set oio 1
+  ;set ooi 1
+  ;set ooo 0
   reset-ticks
 end
 
-to simple
-  set fila max-pycor ;patch de en medio primera fila se enciende
-  ask patch 0 max-pycor [set pcolor red]
+to go
+  if fila = min-pycor [stop] ;si llega a la utima fila para.
+  ask patches with [pycor = fila] ; si la cordenada de y es igual a fila actualizar
+    [actualizar]
+  set fila (fila - 1)
+  tick
 end
 
-to aleatoria
-  set fila max-pycor
-  ask patch random-pxcor max-pycor [set pcolor red]
-end
+to actualizar
+  set izquierda [pcolor] of patch-at -1 0 ;color del patch de la izquierda -1 izquierda 0 misma fila
+  set centro pcolor ;
+  set derecha [pcolor] of patch-at 1 0 ;igua ahora 1 por ser derecha
 
-to entrada-usuario
-  while [mouse-down?]
-  [
-    set fila max-pycor
-    ask patch mouse-xcor max-pycor [set pcolor red]
-  ]
-end
+  ;111 -> 1
+  if (izquierda = orange and centro = orange and derecha = orange and iii = 1) [ask patch-at 0 -1 [set pcolor orange]]
+  ;110 -> 1
+  if (izquierda = orange and centro = orange and derecha = black and iio = 1) [ask patch-at 0 -1 [set pcolor orange]]
+  ;101 -> 1
+  if (izquierda = orange and centro = black and derecha = orange and ioi = 1) [ask patch-at 0 -1 [set pcolor orange]]
+  ;100 -> 1
+  if (izquierda = orange and centro = black and derecha = black and ioo = 1) [ask patch-at 0 -1 [set pcolor orange]]
+  ;011 -> 1
+  if (izquierda = black and centro = orange and derecha = orange and oii = 1) [ask patch-at 0 -1 [set pcolor orange]]
+  ;010 -> 1
+  if (izquierda = black and centro = orange and derecha = black and oio = 1) [ask patch-at 0 -1 [set pcolor orange]]
+  ;001 -> 1
+  if (izquierda = black and centro = black and derecha = orange and ooi = 1) [ask patch-at 0 -1 [set pcolor orange]]
+  ;000 -> 1
+  if (izquierda = black and centro = black and derecha = black and ooo = 1) [ask patch-at 0 -1 [set pcolor orange]]
 
-to variables
-  set resto -1.0
-  set cociente -1.0
-  set div -1.0
-  set temp decimal
-  set iii 0
-  set iio 0
-  set ioi 0
-  set ioo 0
-  set oii 0
-  set oio 0
-  set ooi 0
-  set ooo 0
-end
-
-to decimal-trans
-  set decimal 1
-  while [cociente != 0]
-  [
-    set div temp / 2
-    set cociente (floor div)
-    set resto (temp mod 2)
-    if (decimal = 1) [set ooo resto]
-    if (decimal = 2) [set ooi resto]
-    if (decimal = 3) [set oio resto]
-    if (decimal = 4) [set oii resto]
-    if (decimal = 5) [set ioo resto]
-    if (decimal = 6) [set ioi resto]
-    if (decimal = 7) [set iio resto]
-    if (decimal = 8) [set iii resto]
-    set decimal (decimal + 1)
-    set temp cociente
-  ]
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
-10
-647
-448
+226
+120
+835
+330
 -1
 -1
-13.0
+1.0
 1
 10
 1
@@ -92,98 +77,137 @@ GRAPHICS-WINDOW
 1
 1
 1
--16
-16
--16
-16
+-300
+300
+-100
+100
 0
 0
 1
 ticks
 30.0
 
-SLIDER
-669
-30
-841
-63
-resto
-resto
+BUTTON
+18
+82
+81
+115
+NIL
+setup
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+90
+82
+153
+115
+NIL
+go
+T
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+INPUTBOX
+221
+51
+271
+111
+iii
+0.0
+1
 0
-255
-208.0
-1
-1
-NIL
-HORIZONTAL
+Number
 
-BUTTON
-61
-31
-128
-64
-NIL
-setup\n
-NIL
+INPUTBOX
+271
+51
+321
+111
+iio
+0.0
 1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
+0
+Number
 
-BUTTON
-32
-119
-171
-152
-condición simple
-simple
-NIL
+INPUTBOX
+322
+52
+372
+112
+ioi
+1.0
 1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
+0
+Number
 
-BUTTON
-27
-172
-181
-205
-condición aleatoria
-aleatoria
-NIL
+INPUTBOX
+372
+51
+422
+111
+ioo
+0.0
 1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
+0
+Number
 
-BUTTON
-27
-212
-161
-245
-entrada usuario
-entrada-usuario
-T
+INPUTBOX
+423
+52
+473
+112
+oii
+1.0
 1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
+0
+Number
+
+INPUTBOX
+475
+54
+525
+114
+oio
+0.0
 1
+0
+Number
+
+INPUTBOX
+528
+54
+578
+114
+ooi
+1.0
+1
+0
+Number
+
+INPUTBOX
+581
+55
+631
+115
+ooo
+0.0
+1
+0
+Number
 
 @#$#@#$#@
 ## WHAT IS IT?

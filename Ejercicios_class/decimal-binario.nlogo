@@ -1,50 +1,28 @@
-globals[
-  fila
-  decimal
-  condicion
+globals [
+  contador
+  resto
+ ;decimal
   cociente
   div
-  temp
-  iii
-  iio
-  ioi
-  ioo
-  oii
-  oio
-  ooi
-  ooo
+  temporal
+  ;iii
+  ;iio
+  ;ioi
+  ;ioo
+  ;oii
+  ;oio
+  ;ooi
+  ;ooo
 ]
-
-patches-own [izquierda centro derecha] ;variables de los patches.
-
 to setup
   clear-all
-  reset-ticks
 end
 
-to simple
-  set fila max-pycor ;patch de en medio primera fila se enciende
-  ask patch 0 max-pycor [set pcolor red]
-end
-
-to aleatoria
-  set fila max-pycor
-  ask patch random-pxcor max-pycor [set pcolor red]
-end
-
-to entrada-usuario
-  while [mouse-down?]
-  [
-    set fila max-pycor
-    ask patch mouse-xcor max-pycor [set pcolor red]
-  ]
-end
-
-to variables
+to valiables
   set resto -1.0
   set cociente -1.0
   set div -1.0
-  set temp decimal
+  set temporal 0
   set iii 0
   set iio 0
   set ioi 0
@@ -56,29 +34,33 @@ to variables
 end
 
 to decimal-trans
-  set decimal 1
+  set contador 1
   while [cociente != 0]
   [
-    set div temp / 2
+    set div temporal / 2
     set cociente (floor div)
-    set resto (temp mod 2)
-    if (decimal = 1) [set ooo resto]
-    if (decimal = 2) [set ooi resto]
-    if (decimal = 3) [set oio resto]
-    if (decimal = 4) [set oii resto]
-    if (decimal = 5) [set ioo resto]
-    if (decimal = 6) [set ioi resto]
-    if (decimal = 7) [set iio resto]
-    if (decimal = 8) [set iii resto]
-    set decimal (decimal + 1)
-    set temp cociente
+    set resto (temporal mod 2)
+    if (contador = 1) [set ooo resto]
+    if (contador = 2) [set ooi resto]
+    if (contador = 3) [set oio resto]
+    if (contador = 4) [set oii resto]
+    if (contador = 5) [set ioo resto]
+    if (contador = 6) [set ioi resto]
+    if (contador = 7) [set iio resto]
+    if (contador = 8) [set iii resto]
+    set contador (contador + 1)
+    set temporal cociente
   ]
+end
+
+to go
+  decimal-trans
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
+79
 10
-647
+516
 448
 -1
 -1
@@ -102,26 +84,11 @@ GRAPHICS-WINDOW
 ticks
 30.0
 
-SLIDER
-669
-30
-841
-63
-resto
-resto
-0
-255
-208.0
-1
-1
-NIL
-HORIZONTAL
-
 BUTTON
-61
-31
-128
-64
+6
+65
+73
+98
 NIL
 setup\n
 NIL
@@ -134,48 +101,113 @@ NIL
 NIL
 1
 
-BUTTON
-32
-119
-171
-152
-condición simple
-simple
-NIL
+INPUTBOX
+729
+10
+890
+70
+decimal
+10.0
 1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
+0
+Number
+
+INPUTBOX
+522
+127
+606
+187
+iii
+0.0
 1
+0
+Number
+
+INPUTBOX
+607
+128
+684
+188
+iio
+0.0
+1
+0
+Number
+
+INPUTBOX
+867
+127
+931
+187
+ioi
+0.0
+1
+0
+Number
+
+INPUTBOX
+748
+127
+803
+187
+ioo
+0.0
+1
+0
+Number
+
+INPUTBOX
+801
+127
+868
+187
+oii
+0.0
+1
+0
+Number
+
+INPUTBOX
+685
+128
+748
+188
+oio
+0.0
+1
+0
+Number
+
+INPUTBOX
+933
+127
+999
+187
+ooi
+0.0
+1
+0
+Number
+
+INPUTBOX
+996
+128
+1069
+188
+ooo
+0.0
+1
+0
+Number
 
 BUTTON
-27
-172
-181
-205
-condición aleatoria
-aleatoria
+7
+125
+70
+158
 NIL
-1
-T
-OBSERVER
+go
 NIL
-NIL
-NIL
-NIL
-1
-
-BUTTON
-27
-212
-161
-245
-entrada usuario
-entrada-usuario
-T
 1
 T
 OBSERVER
