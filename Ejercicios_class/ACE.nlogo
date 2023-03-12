@@ -16,15 +16,6 @@ to setup
   clear-all
   set fila max-pycor ;patch de hasta rriba en medio prendido sera la fila
   ask patch 0 max-pycor [set pcolor orange] ;solo prendemos ese patch
-  ; Regla 30 00011110
-  ;set iii 0
-  ;set iio 0
-  ;set ioi 0
-  ;set ioo 1
-  ;set oii 1
-  ;set oio 1
-  ;set ooi 1
-  ;set ooo 0
   reset-ticks
 end
 

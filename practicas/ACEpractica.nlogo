@@ -1,25 +1,21 @@
 globals[
   fila
-  decimal
-  condicion
-  cociente
-  div
-  temp
-  iii
-  iio
-  ioi
-  ioo
-  oii
-  oio
-  ooi
-  ooo
 ]
 
 patches-own [izquierda centro derecha] ;variables de los patches.
 
 to setup
   clear-all
+
   reset-ticks
+end
+
+to go
+  if fila = min-pycor [stop] ;si llega a la utima fila para.
+  ask patches with [pycor = fila] ; si la cordenada de y es igual a fila actualizar
+    [actualizar]
+  set fila (fila - 1)
+  tick
 end
 
 to simple
@@ -40,49 +36,41 @@ to entrada-usuario
   ]
 end
 
-to variables
-  set resto -1.0
-  set cociente -1.0
-  set div -1.0
-  set temp decimal
-  set iii 0
-  set iio 0
-  set ioi 0
-  set ioo 0
-  set oii 0
-  set oio 0
-  set ooi 0
-  set ooo 0
-end
 
-to decimal-trans
-  set decimal 1
-  while [cociente != 0]
-  [
-    set div temp / 2
-    set cociente (floor div)
-    set resto (temp mod 2)
-    if (decimal = 1) [set ooo resto]
-    if (decimal = 2) [set ooi resto]
-    if (decimal = 3) [set oio resto]
-    if (decimal = 4) [set oii resto]
-    if (decimal = 5) [set ioo resto]
-    if (decimal = 6) [set ioi resto]
-    if (decimal = 7) [set iio resto]
-    if (decimal = 8) [set iii resto]
-    set decimal (decimal + 1)
-    set temp cociente
-  ]
+
+
+to actualizar
+  set izquierda [pcolor] of patch-at -1 0 ;color del patch de la izquierda -1 izquierda 0 misma fila
+  set centro pcolor ;
+  set derecha [pcolor] of patch-at 1 0 ;igua ahora 1 por ser derecha
+
+  ;111 -> 1
+  if (izquierda = red and centro = red and derecha = red and iii = 1) [ask patch-at 0 -1 [set pcolor red]]
+  ;110 -> 1
+  if (izquierda = red and centro = red and derecha = black and iio = 1) [ask patch-at 0 -1 [set pcolor red]]
+  ;101 -> 1
+  if (izquierda = red and centro = black and derecha = red and ioi = 1) [ask patch-at 0 -1 [set pcolor red]]
+  ;100 -> 1
+  if (izquierda = red and centro = black and derecha = black and ioo = 1) [ask patch-at 0 -1 [set pcolor red]]
+  ;011 -> 1
+  if (izquierda = black and centro = red and derecha = red and oii = 1) [ask patch-at 0 -1 [set pcolor red]]
+  ;010 -> 1
+  if (izquierda = black and centro = red and derecha = black and oio = 1) [ask patch-at 0 -1 [set pcolor red]]
+  ;001 -> 1
+  if (izquierda = black and centro = black and derecha = red and ooi = 1) [ask patch-at 0 -1 [set pcolor red]]
+  ;000 -> 1
+  if (izquierda = black and centro = black and derecha = black and ooo = 1) [ask patch-at 0 -1 [set pcolor red]]
+
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
+191
 10
-647
-448
+566
+386
 -1
 -1
-13.0
+1.83
 1
 10
 1
@@ -92,30 +80,15 @@ GRAPHICS-WINDOW
 1
 1
 1
--16
-16
--16
-16
+-100
+100
+-100
+100
 0
 0
 1
 ticks
 30.0
-
-SLIDER
-669
-30
-841
-63
-resto
-resto
-0
-255
-208.0
-1
-1
-NIL
-HORIZONTAL
 
 BUTTON
 61
@@ -184,6 +157,111 @@ NIL
 NIL
 NIL
 1
+
+BUTTON
+64
+79
+127
+112
+NIL
+go
+T
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+INPUTBOX
+574
+17
+645
+87
+iii
+0.0
+1
+0
+Number
+
+INPUTBOX
+644
+17
+714
+87
+iio
+1.0
+1
+0
+Number
+
+INPUTBOX
+713
+16
+782
+86
+ioi
+0.0
+1
+0
+Number
+
+INPUTBOX
+781
+16
+849
+84
+ioo
+1.0
+1
+0
+Number
+
+INPUTBOX
+849
+18
+917
+84
+oii
+1.0
+1
+0
+Number
+
+INPUTBOX
+918
+19
+990
+85
+oio
+0.0
+1
+0
+Number
+
+INPUTBOX
+991
+22
+1064
+84
+ooi
+1.0
+1
+0
+Number
+
+INPUTBOX
+1067
+21
+1141
+85
+ooo
+0.0
+1
+0
+Number
 
 @#$#@#$#@
 ## WHAT IS IT?
