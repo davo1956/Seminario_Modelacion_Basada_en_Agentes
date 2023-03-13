@@ -1,87 +1,69 @@
-globals[
-  fila
-  residuo
-  cociente
-  temp
-  div
-  counter
-  iii
-  iio
-  ioi
-  ioo
-  oii
-  oio
-  ooi
-  ooo
-]
+extensions [csv]
 
-to determina
- set residuo -1.0
- set cociente -1.0
- set div -1.0
- set temp decimal
- set iii 0
- set iio 0
- set ioi 0
- set ioo 0
- set oii 0
- set oio 0
- set ooi 0
- set ooo 0
-end
+globals[
+  pos-x
+  pos-y
+  col
+]
+;Juego de la vida
+
+
+patches-own [
+  vecinos ;vecinos vivos
+]
 
 to setup
   clear-all
+  ask patches
+  [ ifelse random 100 < densidad
+    [set pcolor red]
+    [set pcolor black]
+  ]
   reset-ticks
 end
 
 to go
-  determina
-  transforma
-  output-print iii
-  output-print iio
-  output-print ioi
-  output-print ioo
-  output-print oii
-  output-print oio
-  output-print ooi
-  output-print ooo
-  tick
-end
+  ask patches
+  [set vecinos count neighbors with [pcolor = red]] ;cada patch le damos sus vecinos y sabemos cuantos vivos tiene
 
-
-
-to transforma
-  set counter 1
-  while [cociente != 0]
+  ask patches
   [
-    set div temp / 2
-    set cociente (floor div)
-    set residuo (temp mod 2)
-    if (counter = 1) [set ooo residuo]
-    if (counter = 2) [set ooi residuo]
-    if (counter = 3) [set oio residuo]
-    if (counter = 4) [set oii residuo]
-    if (counter = 5) [set ioo residuo]
-    if (counter = 6) [set ioi residuo]
-    if (counter = 7) [set iio residuo]
-    if (counter = 8) [set iii residuo]
-    set counter (counter + 1)
-    set temp cociente
+    ifelse vecinos = 3
+    [set pcolor red]
+    [
+      ifelse vecinos = 2 and pcolor = red
+      [set pcolor red]
+      [set pcolor black]
+    ]
   ]
+
 end
 
+to cargar-pistola
+  clear-all
+  file-close-all
+  file-open( word "pistola.csv")
 
+  while [not file-at-end?][
+    let renglon csv:from-row file-read-line
+    print(renglon)
+    set pos-x item 0 renglon
+    set pos-y item  1 renglon
+    set col item 2 renglon
+    ask patch pos-x pos-y [set pcolor col]
+  ]
+  file-close
+end
 
 @#$#@#$#@
 GRAPHICS-WINDOW
-79
+15
 10
-516
-448
+383
+379
 -1
 -1
-13.0
+1.791045
 1
 10
 1
@@ -91,10 +73,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--16
-16
--16
-16
+-100
+100
+-100
+100
 0
 0
 1
@@ -102,29 +84,12 @@ ticks
 30.0
 
 BUTTON
-6
-65
-73
-98
+389
+293
+456
+326
 NIL
-setup\n
-NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
-
-BUTTON
-7
-125
-70
-158
-NIL
-go
+setup
 NIL
 1
 T
@@ -136,19 +101,71 @@ NIL
 1
 
 SLIDER
-535
-33
-707
-66
-decimal
-decimal
+387
+339
+559
+372
+densidad
+densidad
 0
-255
-50.0
+100
+56.0
 1
 1
 NIL
 HORIZONTAL
+
+BUTTON
+390
+252
+453
+285
+NIL
+go
+T
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+PLOT
+391
+18
+591
+168
+patches vivos
+tick
+#vivos
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -2674135 true "" "plot count patches with [pcolor = red]"
+
+BUTTON
+388
+204
+509
+237
+NIL
+cargar-pistola
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?

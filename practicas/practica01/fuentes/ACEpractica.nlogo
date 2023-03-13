@@ -1,8 +1,37 @@
 globals[
   fila
+  resto
+  cociente
+  temp
+  div
+  contador
+  iii
+  iio
+  ioi
+  ioo
+  oii
+  oio
+  ooi
+  ooo
 ]
 
 patches-own [izquierda centro derecha] ;variables de los patches.
+
+to inicializacion-variables
+  set resto -1.0
+  set cociente -1.0
+  set div -1.0
+  set temp decimal
+  set iii 0
+  set iio 0
+  set ioi 0
+  set ioo 0
+  set oii 0
+  set oio 0
+  set ooi 0
+  set ooo 0
+end
+
 
 to setup
   clear-all
@@ -11,6 +40,8 @@ to setup
 end
 
 to go
+  inicializacion-variables
+  transforma
   if fila = min-pycor [stop] ;si llega a la utima fila para.
   ask patches with [pycor = fila] ; si la cordenada de y es igual a fila actualizar
     [actualizar]
@@ -35,6 +66,29 @@ to entrada-usuario
     ask patch mouse-xcor max-pycor [set pcolor red]
   ]
 end
+
+to transforma
+  set contador 1
+  while [cociente != 0]
+  [
+    set div temp / 2
+    set cociente (floor div)
+    set resto (temp mod 2)
+    if (contador = 1) [set ooo resto]
+    if (contador = 2) [set ooi resto]
+    if (contador = 3) [set oio resto]
+    if (contador = 4) [set oii resto]
+    if (contador = 5) [set ioo resto]
+    if (contador = 6) [set ioi resto]
+    if (contador = 7) [set iio resto]
+    if (contador = 8) [set iii resto]
+    set contador (contador + 1)
+    set temp cociente
+  ]
+end
+
+
+
 
 
 
@@ -66,11 +120,11 @@ end
 GRAPHICS-WINDOW
 191
 10
-566
-386
+564
+384
 -1
 -1
-1.83
+1.82
 1
 10
 1
@@ -175,93 +229,108 @@ NIL
 NIL
 1
 
-INPUTBOX
-574
-17
-645
-87
+SLIDER
+566
+51
+1025
+84
+decimal
+decimal
+0
+255
+30.0
+1
+1
+NIL
+HORIZONTAL
+
+MONITOR
+572
+108
+629
+153
+111
 iii
-0.0
-1
-0
-Number
-
-INPUTBOX
-644
 17
-714
-87
+1
+11
+
+MONITOR
+630
+109
+687
+154
+110
 iio
-1.0
+17
 1
-0
-Number
+11
 
-INPUTBOX
-713
-16
-782
-86
+MONITOR
+687
+109
+744
+154
+101
 ioi
-0.0
+17
 1
-0
-Number
+11
 
-INPUTBOX
-781
-16
-849
-84
+MONITOR
+743
+109
+800
+154
+100
 ioo
-1.0
+17
 1
-0
-Number
+11
 
-INPUTBOX
-849
-18
-917
-84
+MONITOR
+801
+110
+858
+155
+011
 oii
-1.0
+17
 1
-0
-Number
+11
 
-INPUTBOX
-918
-19
-990
-85
+MONITOR
+859
+110
+916
+155
+010
 oio
-0.0
+17
 1
-0
-Number
+11
 
-INPUTBOX
-991
-22
-1064
-84
+MONITOR
+917
+112
+974
+157
+001
 ooi
-1.0
+17
 1
-0
-Number
+11
 
-INPUTBOX
-1067
-21
-1141
-85
+MONITOR
+973
+111
+1030
+156
+000
 ooo
-0.0
+17
 1
-0
-Number
+11
 
 @#$#@#$#@
 ## WHAT IS IT?
