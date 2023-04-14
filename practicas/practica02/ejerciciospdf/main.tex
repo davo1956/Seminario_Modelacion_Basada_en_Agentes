@@ -21,25 +21,28 @@
 
 \begin{document}
 \includepdf{Portada.pdf}
-{\color{red} \section*{Practica 1: Implementación y análisis de automatas celulares.}}
+{\color{red} \section*{Practica 2: Análisis de modelos basados en agentes.}}
 
-{\color{blue} \subsection*{Parte 1. Preguntas}}
+{\color{blue} \subsection*{Parte 1. Modelo de segregación de Schelling.}}
 \vspace{1em}
 
-\begin{enumerate}
-    \item \textbf{¿Qué es la modelación basada en agentes?}\\
-    La modelación basada en agentes es un análisis de sistemas complejos, modelar distintos fenomenos
-    colectivos (muchos agentes intercatuando en un ambiente), se forman de colecciones de agentes que interactuan en el entorno o el ambiente a traves de un determinado tiempo.
+El modelo propuesto originalmente por Thomas Schelling consiste en dos grupos de agentes, por ejemplo rojos y verdes, que localmente tratan de satisfacer la necesidad de estar con los
+de su mismo grupo. De manera general este comportamiento es establecido por un parámetro conocido como porcentaje de \textbf{similitud-requerida} o nivel de tolerancia.\\
 
-    \item \textbf{¿Qué es el enfoque bottom-up?}\\
-    Este tipo de efoque se basa principalmente en la construcción del modelo que es de abajo hacia arriba,
-    \item \textbf{¿Cuándo se usa el concepto de autoorganización en sistemas?}\\
-    Se utiliza cuando hablamos de características de los sistemas complejos y se basa principalmente en producir patrones
-    de manera espontánea conforme al tiempo sin un plan determinado, los componementes se van autoorganizando aplicando un conjunto de reglas para formar estructuras
-    de forma coherente.
-    \item \textbf{¿Qué es una propiedad emergente?}\\
-    Es aquella propiedad que se encuentra en el sistema pero no en sus componentes, sale principalmente de las iteraciones y para esto es necesario que saquemos
-    información del sistema (formación de filas en el sistema de transporte coectivo METRO.)
+Los agentes toman una desición apartir de la información que tienen en su vecindad. Si el agente satisface las condiciones del entorno entonces se queda en su posición actual, de lo contrario
+se mueve a otra posición vacia. Esta dinamica local genera como resultado la formación de cúmmulos de agentes del mismo tipo, hay segregación.\\
+
+\textbf{Definición del Sistema:} El sistema se compone de una reticula de $n$ x $n$ donde $n$ se establece entre $50$ y $100$.
+Cada celda con posición $(i,j)$ alberga a un agente rojo o verde. El sistema tiene un parámetro de \textbf{densidad poblacional} usualmente se establece en $90\%$ (es decir, $10\%$ de las celdas quedan vacias).
+La mitad de la población es color rojo y la otra mitad, color verde. Cada agente toma una celda aleatoriamente.\\
+
+\textbf{Dinámica:} Cada agente en la posición $(i,j)$ se "muda" a un lugar vacio si su vecindad de Moore no cumple con el porcentaje de similitud requerida.\\
+
+{\color{blue} \subsubsection*{Ejercicios:}}
+
+\begin{enumerate}
+    \item \textbf{Implmente el modelo} de segregación de Schelling original, pueden usar de base el codigo visto en clase.
+    \item 
 \end{enumerate}
 
 {\color{blue} \subsection*{Parte 2. Automata Celular Elemental (ACE)}}

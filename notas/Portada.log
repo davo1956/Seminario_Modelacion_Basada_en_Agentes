@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.5)  10 APR 2023 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.11)  13 APR 2023 22:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/david/semestre_2023/seminario_modelación/practicas/practica02/ejerciciospdf/Portada.tex
-(/home/david/semestre_2023/seminario_modelación/practicas/practica02/ejerciciospdf/Portada.tex
+**/home/david/semestre_2023/seminario_modelación/notas/Portada.tex
+(/home/david/semestre_2023/seminario_modelación/notas/Portada.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
@@ -125,15 +125,15 @@ Package pdftex.def Info: images/logo_ciencias.png  used on input line 27.
 
  <./images/logo_unam.png> <./images/logo_ciencias.png>] (./Portada.aux) ) 
 Here is how much of TeX's memory you used:
- 1546 strings out of 476025
- 25240 string characters out of 5796533
+ 1547 strings out of 476025
+ 25162 string characters out of 5796532
  1855388 words of memory out of 5000000
- 22027 multiletter control sequences out of 15000+600000
+ 22028 multiletter control sequences out of 15000+600000
  515037 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,62p,287b,286s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,12n,62p,258b,286s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on Portada.pdf (1 page, 332205 bytes).
+Output written on Portada.pdf (1 page, 332624 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
