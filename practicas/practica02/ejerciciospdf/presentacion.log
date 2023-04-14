@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.11)  14 APR 2023 00:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.11)  14 APR 2023 00:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/david/semestre_2023/seminario_modelación/practicas/practica02/ejerciciospdf/main.tex
-(/home/david/semestre_2023/seminario_modelación/practicas/practica02/ejerciciospdf/main.tex
+**/home/david/semestre_2023/seminario_modelación/practicas/practica02/ejerciciospdf/presentacion.tex
+(/home/david/semestre_2023/seminario_modelación/practicas/practica02/ejerciciospdf/presentacion.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -177,11 +177,11 @@ Package: listings 2023/02/27 1.9 (Carsten Heinz)
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count279
 \l__pdf_internal_box=\box55
-) (./main.aux
+) (./presentacion.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
-\openout1 = `main.aux'.
+\openout1 = `presentacion.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
@@ -295,23 +295,12 @@ Package pdftex.def Info: Portada.pdf , page1 used on input line 23.
  [1
 
  <./Portada.pdf{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}>]
-Underfull \hbox (badness 10000) in paragraph at lines 29--31
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--34
-
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 35.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 35.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 35.
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--38
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
@@ -321,69 +310,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--52
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--57
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--65
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--68
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--74
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
@@ -394,67 +356,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[4] 
+[2] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./main.aux
+(./presentacion.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 6338 strings out of 476025
- 100833 string characters out of 5796532
- 1861388 words of memory out of 5000000
- 26728 multiletter control sequences out of 15000+600000
- 516888 words of font info for 47 fonts, out of 8000000 for 9000
+ 6312 strings out of 476025
+ 100634 string characters out of 5796532
+ 1858388 words of memory out of 5000000
+ 26710 multiletter control sequences out of 15000+600000
+ 514103 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,65p,378b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on main.pdf (4 pages, 382098 bytes).
+ 69i,17n,65p,318b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on presentacion.pdf (2 pages, 345846 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
