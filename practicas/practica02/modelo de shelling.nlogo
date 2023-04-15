@@ -1,4 +1,5 @@
 ;;MODELO DE SEGREGACION DE SCHELLING
+
 globals [
   porcentaje-similar
 ]
@@ -16,7 +17,7 @@ to setup
     set pcolor white
     if random 100 < densidad [
       sprout 1[    ;crea un agente dado un patch
-        set color one-of [95 25] ;naranja 95 y azul 25
+        set color one-of [green red] ;naranja 95 y azul 25
         set size 1.3
         set shape "person"
       ]
@@ -63,7 +64,6 @@ to buscar-nuevo-lugar ;caminata aleatoria
   move-to patch-here ;patch donde este el agente, lo movemos al centro.
 
 end
-
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -101,7 +101,7 @@ densidad
 densidad
 0
 100
-66.0
+50.0
 1
 1
 NIL
@@ -133,7 +133,7 @@ SLIDER
 %similaridad-requerida
 0
 100
-87.0
+56.0
 1
 1
 NIL
