@@ -2,6 +2,7 @@
 
 globals [
   porcentaje-similar
+  similitud
 ]
 
 ;variables de los agentes
@@ -10,6 +11,7 @@ turtles-own[
   vecinos-similares ;iguales a el agente en color
   vecinos-diferentes ;vecinos diferentes a el en color
   numero-vecinos ;el total de vecinos
+   ;variable de similitud en los agentes
 ]
 
 
@@ -22,6 +24,7 @@ to setup
         set color one-of [green red]  ;dados los colores lo escoje aleatoriamente
         set size 1.3
         set shape "person"
+        ;set similitud random-normal media desviacion-estandar
       ]
     ]
   ]
@@ -33,10 +36,11 @@ end
 
 to actualizar-tortugas
   ask turtles[
+    set similitud random-normal media desviacion-estandar
     set vecinos-similares count (turtles-on neighbors) with [color = [color] of myself] ;agentes alrededor de cieeta tortuga with cierta caracteristica y regresa el numero
     set vecinos-diferentes count (turtles-on neighbors) with [color != [color] of myself] ;distinto color
     set numero-vecinos vecinos-similares + vecinos-diferentes
-    set satisfecho? vecinos-similares >= (%similaridad-requerida * numero-vecinos / 100)
+    set satisfecho? vecinos-similares >= (similitud * numero-vecinos / 100)
   ]
 end
 
@@ -71,13 +75,13 @@ to buscar-nuevo-lugar ;caminata aleatoria buscando nuevo lugar
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-217
+208
 10
-712
-506
+708
+511
 -1
 -1
-4.822
+4.8713
 1
 10
 1
@@ -97,26 +101,11 @@ GRAPHICS-WINDOW
 ticks
 30.0
 
-SLIDER
-2
-145
-207
-178
-densidad-poblacional
-densidad-poblacional
-0
-100
-90.0
-1
-1
-%
-HORIZONTAL
-
 BUTTON
-20
-40
-87
-73
+14
+31
+81
+64
 NIL
 setup
 NIL
@@ -129,26 +118,11 @@ NIL
 NIL
 1
 
-SLIDER
-2
-101
-206
-134
-%similaridad-requerida
-%similaridad-requerida
-0
-100
-76.0
-1
-1
-NIL
-HORIZONTAL
-
 BUTTON
-118
-41
-181
-74
+92
+31
+155
+64
 NIL
 go
 T
@@ -161,14 +135,29 @@ NIL
 NIL
 1
 
+SLIDER
+0
+86
+205
+119
+densidad-poblacional
+densidad-poblacional
+1
+100
+90.0
+1
+1
+%
+HORIZONTAL
+
 PLOT
-735
-10
-1588
-508
- % similar
+724
+15
+1451
+407
+%similar
 tiempo
-% similitud
+%similitud
 0.0
 10.0
 0.0
@@ -177,7 +166,37 @@ true
 false
 "" ""
 PENS
-"default" 1.0 0 -2674135 true "" "plot porcentaje-similar"
+"default" 1.0 0 -15040220 true "" "plot similitud"
+
+SLIDER
+1
+148
+173
+181
+media
+media
+0
+100
+75.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+0
+197
+184
+230
+desviacion-estandar
+desviacion-estandar
+0
+100
+80.0
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
