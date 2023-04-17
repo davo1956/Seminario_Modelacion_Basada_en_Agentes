@@ -5,7 +5,7 @@ to setup
   ask patches
   [
     if random-float 100 < densidad
-    [set pcolor 33]
+    [set pcolor yellow]
   ]
   create-turtles poblacion [
     set color white
@@ -14,14 +14,18 @@ to setup
   ]
 end
 
+
+
 to go
   buscar-madera
   encontrar-pila
   dejar-madera
 end
 
+
+
 to buscar-madera
-  ifelse pcolor = 33
+  ifelse pcolor = yellow
   [
     set pcolor black
     set color red
@@ -33,6 +37,7 @@ to buscar-madera
   ]
 end
 
+
 to gira
   fd 1
   rt random 50
@@ -40,17 +45,19 @@ to gira
 end
 
 to encontrar-pila
-  if pcolor != 33
+  if pcolor != yellow
   [gira
     encontrar-pila]
 end
 
+
 to dejar-madera
+
   ifelse pcolor = black
   [
-    set pcolor 33
+    set pcolor yellow
     set color white
-    alejarse
+   alejarse
   ]
   [
     rt random 360
@@ -58,6 +65,7 @@ to dejar-madera
     dejar-madera
   ]
 end
+
 
 to alejarse
   rt random 360
@@ -102,7 +110,7 @@ densidad
 densidad
 0
 100
-14.0
+19.0
 1
 1
 NIL
@@ -117,7 +125,7 @@ poblacion
 poblacion
 1
 20
-7.0
+14.0
 1
 1
 NIL
