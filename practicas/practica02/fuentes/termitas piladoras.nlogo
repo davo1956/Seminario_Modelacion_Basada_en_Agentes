@@ -1,4 +1,5 @@
 ;Termitas apiladoras
+
 to setup
   clear-all
   set-default-shape turtles "bug"
@@ -14,17 +15,56 @@ to setup
   ]
 end
 
+to setup-un-tipo
+clear-all
+set-default-shape turtles "bug"
+ask patches
+[
+  if random-float 100 < densidad
+  [set pcolor yellow]
+]
+create-turtles poblacion [
+  set color white
+  setxy random-xcor random-ycor
+  set size 5
+]
+end
 
-
-to go
-  buscar-madera
-  encontrar-pila
-  dejar-madera
+to go-un-tipo
+  buscar-madera-amarilla
+  encontrar-pila-amarilla
+  dejar-madera-amarilla
 end
 
 
 
-to buscar-madera
+to go
+  buscar-madera-amarilla
+  encontrar-pila-amarilla
+  dejar-madera-amarilla
+  buscar-madera-cafe
+  encontrar-pila-cafe
+  dejar-madera-cafe
+
+end
+
+
+to buscar-madera-cafe
+  ifelse pcolor = 33
+  [
+    set pcolor black
+    set color red
+    fd 20
+  ]
+  [
+    gira
+    buscar-madera-cafe
+  ]
+end
+
+
+
+to buscar-madera-amarilla
   ifelse pcolor = yellow
   [
     set pcolor black
@@ -33,7 +73,7 @@ to buscar-madera
   ]
   [
     gira
-    buscar-madera
+    buscar-madera-amarilla
   ]
 end
 
@@ -44,14 +84,20 @@ to gira
   lt random 50
 end
 
-to encontrar-pila
+to encontrar-pila-amarilla
   if pcolor != yellow
   [gira
-    encontrar-pila]
+    encontrar-pila-amarilla]
+end
+
+to encontrar-pila-cafe
+  if pcolor != 33
+  [gira
+    encontrar-pila-cafe]
 end
 
 
-to dejar-madera
+to dejar-madera-amarilla
 
   ifelse pcolor = black
   [
@@ -62,10 +108,24 @@ to dejar-madera
   [
     rt random 360
     fd 1
-    dejar-madera
+    dejar-madera-amarilla
   ]
 end
 
+to dejar-madera-cafe
+
+  ifelse pcolor = black
+  [
+  set pcolor 33
+    set color white
+    alejarse
+  ]
+  [
+    rt random 360
+    fd 1
+    dejar-madera-cafe
+  ]
+end
 
 to alejarse
   rt random 360
@@ -77,8 +137,8 @@ end
 GRAPHICS-WINDOW
 210
 10
-701
-502
+821
+622
 -1
 -1
 3.0
@@ -91,10 +151,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--80
-80
--80
-80
+-100
+100
+-100
+100
 0
 0
 1
@@ -110,7 +170,7 @@ densidad
 densidad
 0
 100
-19.0
+90.0
 1
 1
 NIL
@@ -125,7 +185,7 @@ poblacion
 poblacion
 1
 20
-16.0
+20.0
 1
 1
 NIL
@@ -134,9 +194,9 @@ HORIZONTAL
 BUTTON
 27
 169
-94
+182
 202
-NIL
+2 tipos de maderas
 setup\n
 NIL
 1
@@ -149,12 +209,46 @@ NIL
 1
 
 BUTTON
-117
-169
-180
-202
-NIL
+14
+213
+203
+246
+go dos tipos de maderas
 go
+T
+1
+T
+TURTLE
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+34
+286
+175
+319
+1 tipo de madera
+setup-un-tipo
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+58
+334
+153
+367
+go un tipo
+go-un-tipo
 T
 1
 T
