@@ -5,7 +5,7 @@ to setup
   ask patches
   [
     if random-float 100 < densidad
-    [set pcolor yellow]
+    [set pcolor one-of [yellow 33]]
   ]
   create-turtles poblacion [
     set color white
@@ -125,7 +125,7 @@ poblacion
 poblacion
 1
 20
-14.0
+16.0
 1
 1
 NIL
