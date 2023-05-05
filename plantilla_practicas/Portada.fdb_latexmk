@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1681447186 "/home/david/semestre_2023/seminario_modelación/plantilla_practicas/Portada.tex" "Portada.pdf" "Portada" 1681447188 0
-  "/home/david/semestre_2023/seminario_modelación/plantilla_practicas/Portada.tex" 1681447186 2075 6688e79e0ff3aeed915271bac21c8f0f ""
+["pdflatex"] 1683262433 "/home/david/semestre_2023/seminario_modelación/plantilla_practicas/Portada.tex" "Portada.pdf" "Portada" 1683262434 0
+  "/home/david/semestre_2023/seminario_modelación/plantilla_practicas/Portada.tex" 1683262432 2078 589dce324f1fbc68d07dbd4fe3c104fd ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1680514707 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1680514707 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1680514707 1300 63a6111ee6274895728663cf4b4e7e81 ""
@@ -33,8 +33,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1680514707 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1681265962 336600 6f90c65e159aaf8faaa6ea56bf6655c4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1681265899 8204104 7833c990d65d676da9d1bbc544cc58c3 ""
-  "Portada.aux" 1681447188 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "Portada.tex" 1681447186 2075 6688e79e0ff3aeed915271bac21c8f0f ""
+  "Portada.aux" 1683262434 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "Portada.tex" 1683262432 2078 589dce324f1fbc68d07dbd4fe3c104fd ""
   "images/logo_ciencias.png" 1678052136 75779 1c87a3931ba4d310105a13babe838a58 ""
   "images/logo_unam.png" 1678052136 284641 bd0670d95026b4d8545a74884b2e7ecb ""
   (generated)
