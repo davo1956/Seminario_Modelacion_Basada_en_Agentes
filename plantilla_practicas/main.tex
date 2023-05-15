@@ -71,21 +71,82 @@ Los parametros globales determinan el comportamiento del sistema y tiene un rang
     \item Como escenario inicial, establezca un tamaño de población $POB=30\%$, distanciamiento social, $DS=0\%$, Tiempo de enfermedad $TE=10$ ticks, Apertura de visión, $WIG=60$° y $PC=50\%$. En el inicio establezca algunos enfermos par iniciar el contagio.
     Grafique personas enfermas y recuperadas vs  el tiempo.\\
     \begin{enumerate}
-    \item \textbf{¿Cómo son las curvas?}
+    \item \textbf{¿Cómo son las curvas?}\\
+    \textbf{Respuesta:} Se puede ver en la imagen del modelo, que las curvas con un tanto cerradas, y en un tiempo $t$ cambia drasticamente su comportamiento.\\
+    \textbf{\includegraphics[scale = 0.30]{images/p1.png}}
     \item \textbf{¿En algún momento crece exponencialmente?}
+    \textbf{Respuesta:} Si, llega un momento donde la cantidad de agentes sanos o curados crece de manera exponencial, mientras que los enfermos decrecen.
     \end{enumerate}
-    Caputura la pantalla y explique los resultados.
+
+    \textbf{\includegraphics[scale = 0.30]{images/p1-1.png}}\\
+    podemos observar que al igual que en la primer captura esta es otra ejecución del modelo, en el que si podemos ver la cantidad de sanos va en declive,
+    mienstras que los enfermos en un punto preciso del experimento decrecen de manera exponencial, mientras que por otro lado, los agentes sanos van en crecimiento.
 
 
     \item Realice variaciones de los valores de los parámetros para replicar de manera cualitativa las curvas caracteristicas del modelo SIR con la unica restricción de mantener $DS=0\%$.
-    Reporte los parámetros y la grafica con las curvas.
+    Reporte los parámetros y la grafica con las curvas.\\
+
+    \textbf{\includegraphics[scale = 0.30]{images/2-0.png}}\\
+    en esta ocaciones tenemos $POB=50\%$, $WIG=175$°, $PC=69\%$, $TE=23ticks$, $sanos=30\%$.\\
+
+    \textbf{\includegraphics[scale = 0.30]{images/2-1.png}}\\
+    en esta ocaciones tenemos $POB=70\%$, $WIG=360$°, $PC=86\%$, $TE=50ticks$, $sanos=10\%$.\\
+
+    \textbf{\includegraphics[scale = 0.30]{images/2-2.png}}\\
+    en esta ocaciones tenemos $POB=30\%$, $WIG=10$°, $PC=90\%$, $TE=100ticks$, $sanos=80\%$.\\
+    
+    
     
     \item Con los parametros del ejercicio 2, establezca distanciamiento social $DS=25\%$.
     \begin{enumerate}
         \item \textbf{¿Cómo cambio la grafica de enfermos, infectados y recuperados?}.
-        \item \textbf{Ahora $DS=50\%$ y $DS=75\%$.}
-    \end{enumerate}
-    Reporte las graficas.
+        Pude darme cuenta que cambiaba al menos en el caso donde teniamos mas poblacion y un distanciamiento mayor se formaba mas la curva que en el otro caso donde cada una crecia en su respectivo Tiempo
+        aunque claro que al llegar a los ticks correspondientes la simulación acababa y  crecia el número de curados.
+        \item \textbf{Ahora $DS=50\%$ y $DS=75\%$.}\\
+        Con $DS=50\%$:\\
+        
+        \textbf{\includegraphics[scale = 0.30]{images/30-50.png}}\\
+        en esta ocaciones tenemos $POB=50\%$, $WIG=175$°, $PC=69\%$, $TE=23ticks$, $sanos=30\%$.\\
+        
+        \textbf{\includegraphics[scale = 0.30]{images/31-50-50.png}}\\
+        en esta ocaciones tenemos $POB=70\%$, $WIG=360$°, $PC=86\%$, $TE=50ticks$, $sanos=10\%$.\\
+    
+
+        \textbf{\includegraphics[scale = 0.30]{images/32-50.png}}\\
+        en esta ocaciones tenemos $POB=70\%$, $WIG=10$°, $PC=50\%$, $TE=100ticks$, $sanos=80\%$.\\
+
+        
+        Con $DS=75\%$:\\
+
+        \textbf{\includegraphics[scale = 0.30]{images/30-75.png}}\\
+        en esta ocaciones tenemos $POB=50\%$, $WIG=175$°, $PC=69\%$, $TE=23ticks$, $sanos=30\%$.\\
+        
+        \textbf{\includegraphics[scale = 0.30]{images/31-50.png}}\\
+        en esta ocaciones tenemos $POB=70\%$, $WIG=360$°, $PC=86\%$, $TE=50ticks$, $sanos=10\%$.\\
+    
+
+        \textbf{\includegraphics[scale = 0.30]{images/32-75.png}}\\
+        en esta ocaciones tenemos $POB=30\%$, $WIG=10$°, $PC=50\%$, $TE=100ticks$, $sanos=80\%$.\\
+
+
+\end{enumerate}
+    Reporte las graficas.\\
+    Con $DS=25\%$:\\
+
+    \textbf{\includegraphics[scale = 0.30]{images/30-25.png}}\\
+    en esta ocaciones tenemos $POB=50\%$, $WIG=175$°, $PC=69\%$, $TE=23ticks$, $sanos=30\%$.\\
+
+
+    \textbf{\includegraphics[scale = 0.30]{images/31-25.png}}\\
+    en esta ocaciones tenemos $POB=70\%$, $WIG=360$°, $PC=86\%$, $TE=50ticks$, $sanos=10\%$.\\
+    
+
+
+    \textbf{\includegraphics[scale = 0.30]{images/32-25.png}}\\
+    en esta ocaciones tenemos $POB=30\%$, $WIG=10$°, $PC=50\%$, $TE=100ticks$, $sanos=80\%$.\\
+
+
+
 
     \item La curva de infectados alcanza un número máximo de infectados (pico) en un tiempo especifico $t*$, que llamaremos Emax.
     Al variar el paámetro distanciamiento social este valor maximo podría cambiar, para realizar esto, realice la grafica $DS$ vs $Emax$.
@@ -98,7 +159,14 @@ Los parametros globales determinan el comportamiento del sistema y tiene un rang
     \item \textbf{Conclusión.} Después de sus análisis: 
     \begin{enumerate}
         \item \textbf{¿Qué podría decir del alcance del modelo, funciona para describir, explicar, pronosticar?}
+        A mi parecer si funciona aunque en el apartado de distanciamiento social, yo siento que como lo comentamos y vimos en una clase, el aplicar lugar como tipo "refugio" que en la vida real seria estar encerrados en nuestra vivienda, 
+        podria funcionar para obtener unos resultados más certeros, pero para su estudio, este modelo con este tipo de funcionamiento no lo veo erroneo, al contrario, a mi forma de analizar y ver como se comportaba el modelo, siento que si es una muy
+        buena  aproximación a la realidad a como se vivió con el reciente COVID, es muy interesante, nunca habia oido de este tipo de modelo y me llamó muchisimo la atención del como se comporta en diversas circunstancias.
         \item \textbf{¿Qué posibles extenciones podría proponer?}
+        Como lo comente anteriormente podemos agregar en el mundo, apartados como localidades donde los agentes permanezcan un determinado tiempo y asi ver como se comporta y como baja el contagio, tambien podemos agregar la muerte de los agentes si despues de un determinado Tiempo
+        no vemos que mejoren, podemos "matarlos" y asi reducir la población y poder tener un contador de los agentes sobrevivientes despues de dertminados ticks, podemos tambien agregar que pueden "curarse" si despues de un tiempo determinado acuden de manera aleatoria en un punto de la simulación, 
+        en la que pueden curarse y asi si uno esta curado y se encuentra con alguno que no lo esta, como ya no se puede contagiar, que el que esta en color verde, "oriente" al agente enfermo hacia donde se curo,
+        un tanto similar al comportamiento que observamos en la simulacion de las termitas apiladoras pero ahora en lugar de apilar que ese se el punto de cura.
     \end{enumerate}
 
 \end{enumerate}
