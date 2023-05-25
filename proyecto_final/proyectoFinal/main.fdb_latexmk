@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1684993326 "/home/david/semestre_2023/seminario_modelación/proyecto_final/proyectoFinal/main.tex" "main.pdf" "main" 1684993327 0
-  "/home/david/semestre_2023/seminario_modelación/proyecto_final/proyectoFinal/main.tex" 1684993326 1013 99827c3278a59b4c6d2deba1da0245fa ""
+["pdflatex"] 1684996016 "/home/david/semestre_2023/seminario_modelación/proyecto_final/proyectoFinal/main.tex" "main.pdf" "main" 1684996017 0
+  "/home/david/semestre_2023/seminario_modelación/proyecto_final/proyectoFinal/main.tex" 1684996016 2154 8eacb90ac8f64e1df4fd7ac2e4b28f22 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1680514707 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1680514707 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1680514707 1288 655e228510b4c2a1abe905c368440826 ""
@@ -55,8 +55,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1681265962 336600 6f90c65e159aaf8faaa6ea56bf6655c4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1681265899 8204104 7833c990d65d676da9d1bbc544cc58c3 ""
   "Portada.pdf" 1684991574 333098 03b2d72196782ddaa1bef22848cf4f75 ""
-  "main.aux" 1684993327 276 cfded1e150f39fa521d07b9e9460609f "pdflatex"
-  "main.tex" 1684993326 1013 99827c3278a59b4c6d2deba1da0245fa ""
+  "main.aux" 1684996017 291 3fb06b40bbb4098604eaf0252352bf84 "pdflatex"
+  "main.tex" 1684996016 2154 8eacb90ac8f64e1df4fd7ac2e4b28f22 ""
   (generated)
   "main.aux"
   "main.log"
