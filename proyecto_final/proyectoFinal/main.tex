@@ -52,10 +52,16 @@ el como se debe de abordar tal problematica es de suma importancia para que el s
 
 El modelar este tipo de comportamientos nos ayudan para saber el timpo de mantenimiento que le debemos de dar al sistema en si para que no ocacione fallas catastroficas que compromentan todo el sistema, asi mismo podemos ver en el modelo como es que se comunican los componentes del sistema a pesar de una falla o contagio.\\
 
-En otros modelos que he visto este tipo de fallos los han abordado con distintos algoritmos distribuidos, estos algoritmos son también "Detectores de fallos", de igual manera es posible implmentar usando Modelación Basada en Agentes, este tipo de comportamiento de envio-recepción de mensajes. que trataremos de abordar de manera "implicita" en nuestro sistema.\\
+En otros modelos que he visto este tipo de fallos los han abordado con distintos algoritmos distribuidos, estos algoritmos son también "Detectores de fallos", de igual manera es posible implmentar usando Modelación Basada en Agentes, este tipo de comportamiento de envio-recepción de mensajes. que trataremos de abordar de manera \textbf{implicita} en nuestro sistema.\\
 
 En modelos basados en agentes este tipo de problemas de redes los han abordado de manera diferente, usando como lo mencione anteriomente diferentes tipos de algoritmos distribuidos, para esto explicaremos que es un algoritmo distribuido.
+Un algoritmo distribuido es una colección de n autómatas, uno por proceso. Un autómata describe la secuencia de pasos ejecutados por el proceso correspondiente. Adicional al poder de una máquina de Turing, un autómata es enriquecido con dos operaciones de comunicación que permite enviar y recibir un mensaje en cualquier canal. Estas
+operaciones son $send()$ y $receive()$.\\
 
+Algunos de los algortimos que se utilizan son para detectar fallas en el sistema, algoritmos de detección de $k$ fallas, algoritmos que son tolerantes a fallas, algoritmos de conceso(los cuales se comunican los procesos entre si para llegar a una desición en común), estos mismos algoritmos de conceso pero con fallas en alguno de los componentes.
+Como se puede leer, existen multiples aplicaciones y las mas practicas son los protocolos de red, en donde principalmente modelamos el sistema para ver como es que se comporta, también es importante para su estudio.\\
+
+Existen muchas aplicaciones y muchos algoritmos de aplicación, sin embargo como lo mencionamos con anterioridad vamos a unir en la practica los conceptos de fallo con los de virus para una mejor y más facil implementación.\\
 
 
 
