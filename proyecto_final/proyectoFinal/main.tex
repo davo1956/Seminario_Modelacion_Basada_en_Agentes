@@ -63,19 +63,46 @@ Como se puede leer, existen multiples aplicaciones y las mas practicas son los p
 
 Existen muchas aplicaciones y muchos algoritmos de aplicación, sin embargo como lo mencionamos con anterioridad vamos a unir en la practica los conceptos de fallo con los de virus para una mejor y más facil implementación.\\
 
-
-
-
-
-
-
-
-
-
-
-
 {\color{blue} \subsection*{2- PLANTEAMIENTO.}}
 \vspace{1em}
+
+{\color{red} \subsubsection*{2.1 Marco Teorico.}}
+\vspace{1em}
+
+En este proyecto vamos a analizar principalmente el comportamiento de los componentes computacionales, en este caso especificos supondremos que contamos con una serie computadoras interconectadas mediante la red, a este tipo de comunicaciones se les llama "Computación distribuida", el uso de estos componentes es de suma importancia en el aspecto de 
+sincronización de estos componentes, suponiendo que tenemos un archivo en una base de datos lo debemos o lo podemos modificar de un componente y los demás deben de estar sincronizados entre si para que haya integridad en los datos e intercambio de ellos.
+Para fines de la materia de Modelación Basada en Agentes vamos a usar la herramienta de \textbf{NetLogo} en la que vamos a tomar como punto de partida el modelo que pertenece a la biblioteca de modelos del programa, usaremos \textbf{"Virus on a
+Network"}, no usaremos el modelo tal cual a como esta, lo modificaremos para que la topología del sistema se adapte a modelos mas realistas en donde los componentes están localizados de una manera aleatoria e incluso a distancias distintas.\\
+En nuestea implementación usaremos tres estados base para nuestros componentes:\\
+\begin{enumerate}
+    \item Infectado: nuestro componente esta en estado infectado o en falla que por terminos del proyecto ambas las vamos a tomar como analogas aunque no lo son en realidad y cabe mencionarlo con determinación.
+    \item Propenso a ser infectado: Es el estado inical de nuestro sistema y todos los componentes estan en riesgo de estar infectados o no.
+    \item Recuperado o Salvado: En este estado, los componentes estan a salvo, puede que se hayan infectado pero despues de un determinado tiempo (ticks) el componente se recupera y ya no esta propenso a ser infectado o dañado. 
+\end{enumerate}
+
+% AQUI VA LA EXPLICACION RELACIONADA CON LA INFECCION.
+
+
+{\color{red} \subsubsection*{2.2 Objetivo General.}}
+\vspace{1em}
+
+El objetivo general de nuestro proyecto es:\\
+
+\begin{enumerate}
+    \item Ver y analizar el comportamiento de una red remota de distintos componentes que se localizan de manera aleatoria y el como dado un fallo en uno o más, como es que se comporta dicha red ante estos distintas
+    problematicas y en que momento la red puede llegar a colapsar 
+\end{enumerate}
+
+{\color{red} \subsubsection*{2.3 Objetivos Especificos.}}
+\vspace{1em}
+
+Los objetivos especificos de nuestro proyecto parten del objetivo principal y son:\\
+\begin{enumerate}
+    \item Ver el comportamiento en distintas topologias lo mas cercanas a la realidad y su comunicación.
+    \item Analizar el comportamiento de los componentes dados sus tres estados principales y el como se van modificando en respecto al tiempo.
+    \item La distintas variaciones de los parametros y distintos ambientes en como se desenvuelve el sistema y en que momento puede llegar a un llamado "Fallo Total".
+    \item La comunicación de los componentes y el analisis del como puede llegar a ser el sistema más eficiente sin importar el tipo de fallos o la cantidad.
+\end{enumerate}
 
 
 {\color{blue} \subsection*{3- DESARROLLO.}}
