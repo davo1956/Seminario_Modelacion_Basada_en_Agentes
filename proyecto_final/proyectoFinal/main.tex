@@ -80,8 +80,21 @@ En nuestea implementación usaremos tres estados base para nuestros componentes:
     \item Recuperado o Salvado: En este estado, los componentes estan a salvo, puede que se hayan infectado pero despues de un determinado tiempo (ticks) el componente se recupera y ya no esta propenso a ser infectado o dañado. 
 \end{enumerate}
 
-En otros puntos más especificos 
+En otros puntos más especificos en terminos del funcionamiento de nuestro modelo, tenemos varias particularidades, en primer aspecto tenemos sliders para poder determinar las distintas caracteristicas del modelo.\\
+\begin{enumerate}
+    \item \textbf{Probabilidad de infección:} probabilidad de infectar o que un nodo falle.
+    \item \textbf{Tiempo de revisión de fallo:} tiempo (medido en ticks) que pase para checar si un nodo tiene algun fallo.
+    \item \textbf{Probabilidad de recuperación:} la probabilidad de que un nodo se recupere del fallo o contagio.
+    \item \textbf{Resistencis a fallos futuros:} despues de ser curado o reparado, el componente permanece inmune a fallos.
+    \item \textbf{Grado minimo de un nodo:} número de aristas que salen de un nodo, el minimo es que es de este número en adelante.
+    \item \textbf{Número de nodos:} número de componentes del sistema de redes.
+    \item \textbf{Componentes fallidos:} número de componentes que inicializan el sistema con un fallo.
+\end{enumerate} 
 
+De igual manera es importante mencionar la topología de nuestro modelo, tomamos como topología inicialmete dos tipos, un tipo es topología de tipo \textbf{Distribución Circular}, en la que nos nodos estan esparcidos de manera de circulo al rededor de nuestro modelo.
+También tenemos la topología \textbf{Topología Aleatoria} en esta topología nuestros nodos o componentes están repartidos sin restricciones en todo el mundo pueden formar distintas tipo de representaciones, esta representación es la más cercana a las del mundo real.\\
+
+También es muy importante mencionar la comunicación de los componentes en el modelo, esta es otra de las variaciones respecto al modelo original, nuestro modelo tiene un tipo de comunicación de \textbf{Grafos Dirigidos}, esta su principal caracteristica es que son flechas dirigidas en las que los componentes solo se comunican en la dirección en la que se asocia su arista, no en otro sentido.
 
 {\color{red} \subsubsection*{2.2 Objetivo General.}}
 \vspace{1em}
@@ -108,8 +121,167 @@ Los objetivos especificos de nuestro proyecto parten del objetivo principal y so
 {\color{blue} \subsection*{3- DESARROLLO.}}
 \vspace{1em}
 
+En terminos generales las especificciones del programa las mencionamos en la sección anterior, pero ahora profundizaremos un poco más en los sliders, el mundo, y el funcionamiento de nuestro modelo.\\
+
+\textbf{\includegraphics[scale = 0.30]{images/vista-general.png}}\\
+Esta es la vista de nuestro modelo (tomando una topologia aleatoria).\\
+
+Como podemos ver tenemos una serie de sliders:\\
+\begin{enumerate}
+    \item \textbf{Probabilidad de infección:} probabilidad de infectar o que un nodo falle. Va de $0$ a $10$
+    \item \textbf{Tiempo de revisión de fallo:} tiempo (medido en ticks) que pase para checar si un nodo tiene algun fallo. de $0$ a $30$ ticks
+    \item \textbf{Probabilidad de recuperación:} la probabilidad de que un nodo se recupere del fallo o contagio. de $0$ a $10$\%
+    \item \textbf{Resistencis a fallos futuros:} despues de ser curado o reparado, el componente permanece inmune a fallos. de $0$ a $100$\%
+    \item \textbf{Grado minimo de un nodo:} número de aristas que salen de un nodo, el minimo es que es de este número en adelante. número entero
+    \item \textbf{Número de nodos:} número de componentes del sistema de redes. número entero
+    \item \textbf{Componentes fallidos:} número de componentes que inicializan el sistema con un fallo. número entero
+\end{enumerate}
+
+También tenemos una grafica en la que mostramos con los colores asociados los 3 diferentes estados de los componentes o nodos:\\
+
+\begin{enumerate}
+    \item Infectado(\textbf{rojo}): nuestro componente esta en estado infectado o en falla que por terminos del proyecto ambas las vamos a tomar como analogas aunque no lo son en realidad y cabe mencionarlo con determinación.
+    \item Propenso a ser infectado(\textbf{verde}): Es el estado inical de nuestro sistema y todos los componentes estan en riesgo de estar infectados o no.
+    \item Recuperado o Salvado(\textbf{azul}): En este estado, los componentes estan a salvo, puede que se hayan infectado pero despues de un determinado tiempo (ticks) el componente se recupera y ya no esta propenso a ser infectado o dañado. 
+\end{enumerate}
+
+La grafica modela el comportamiento del sistema delante de diversas situaciones y es facil de ver si es que falla, en que casos es posible un colapso y en cuanto tiempo se puede llegar a recuperar el sistema.\\
+
+Los algortimos vienen en la implementación del modelo pero para un facil comprendimiento los anexaremos acontinuación:\\
+
+\begin{verbatim}
+    ;; Funcion de inicialización setup, creamos los nodos y se conectan a topologia normal
+to setup-b
+  clear-all
+  setup-grafo-aleatorio
+  setup-red2
+  ask n-of fallo turtles
+    [ esta-infectado ]
+  ask links [ set color white ]
+  reset-ticks
+end
+
+
+;;setup crea los nodos del grafo de manera aleatoria (tomamos una topologia aleatoria)
+
+to setup-grafo-aleatorio
+  crt numero-nodos [
+    setxy random-xcor random-ycor
+    esta-en-riesgo
+    set shape "circle"
+    set color green
+    set tiempo-fallo random tiempo-checar-fallo
+  ]
+end
+
+;;setup para inicializar las conexiones de la red en topologia circular
+
+to setup-red
+ let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
+  while [count links < numero-aristas ]
+ [
+   ask one-of turtles
+   [
+      let eleccion (min-one-of (other turtles with [not link-neighbor? myself])
+                     [distance myself])
+      if eleccion != nobody [create-link-to eleccion ]
+    ]
+    repeat 10
+    [
+      layout-circle (sort turtles) max-pxcor - 1
+    ]
+  ]
+end
+
+;;setup para inicializar las conexiones de la red en topologia aleatoria
+
+to setup-red2
+  let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
+  while [count links < numero-aristas ]
+ [
+   ask one-of turtles
+   [
+      let eleccion (min-one-of (other turtles with [not link-neighbor? myself])
+                     [distance myself])
+      if eleccion != nobody [create-link-to eleccion ]
+    ]
+  ]
+end
+
+
+
+;;función que nos dice si esta infectado el nodo
+
+to esta-infectado
+  set dañado? true
+  set resistente? false
+  set color red
+end
+
+;;Funcion que nos dice si es posible dañar o contagiar el componente
+
+to esta-en-riesgo
+  set dañado? false
+  set resistente? false
+  set color green
+end
+
+;;Funcion que nos dice si el componente es resistente a fallos o daños.
+to esta-resistente
+  
+  set dañado? false
+  set resistente? true
+  set color blue
+  ask my-links [ set color gray - 2 ]
+end
+
+;;Metodo principal
+
+to go
+  if all? turtles [not dañado?]
+    [ stop ]
+  ask turtles
+  [
+    set tiempo-fallo tiempo-fallo + 1
+    if tiempo-fallo >= tiempo-checar-fallo
+      [ set tiempo-fallo 0 ]
+  ]
+  contagio
+  checar-problema
+  tick
+end
+
+;;metodo para contagio
+
+to contagio
+  ask turtles with [dañado?]
+    [ ask link-neighbors with [not resistente?]
+        [ if random-float 100 < probabilidad-infeccion
+        [ esta-infectado ] ] ]
+end
+
+to checar-problema
+  ask turtles with [dañado? and tiempo-fallo = 0]
+  [
+    if random 100 < probabilidad-recuperacion
+    [
+      ifelse random 100 < resistencia-fallo-futuro
+        [ esta-resistente ]
+      [ esta-en-riesgo ]
+    ]
+  ]
+end
+\end{verbatim}
+
+El codigo tiene un comentario por cada función en la wue se explica su funcionamiento.
+
+
 {\color{blue} \subsection*{4- RESULTADOS.}}
 \vspace{1em}
+
+Al ejecutar un determinado número de veces nuestro modelo podemos observar lo siguiente:\\
+
+%RESULTADOS CON IMAGENES DE LA EJECUCIÓN.
 
 {\color{blue} \subsection*{5- CONCLUSIONES Y REFLEXIONES.}}
 \vspace{1em}
@@ -126,8 +298,17 @@ Los objetivos especificos de nuestro proyecto parten del objetivo principal y so
     CIC. (s.f.). ¿Qué es Network Fault Management o la Gestión de Fallos de Red? Recuperado de https://www.cic.es/que-es-network-fault-management-o-la-gestion-de-fallos-de-red/
     \bibitem{4}
     Proofpoint. (s.f.). Computer Virus. Recuperado de $https://www.proofpoint.com/es/threat-reference/computer-virus:~:text=Un20virus\%20inform\%C3\%A1tico\%20es\%20una,un\%20dispositivo\%20o\%20red\%20local.$
+    \bibitem{5}
+    http://www.cs.us.es/~fsancho/ pagina de graficas en netlogo.
+    \bibitem{6}
+    NetLogo Dictionary. (s.f.). Recuperado de https://ccl.northwestern.edu/netlogo/resources/diccionario.pdf
+    \bibitem{7}
+    Clase MBA 2023-2. Ayudantía: revisión del modelo "enlace preferencial" en NetLogo
+    \bibitem{8}
+    Clase MBA 2023-2. Redes de mundo pequeño
+    \bibitem{9}
+    Clase MBA 2023-2. Redes libres de escala
+    \bibitem{10} Biblioteca de modelos de Netlogo.
 \end{thebibliography}
-
-
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.11)  28 MAY 2023 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.11)  28 MAY 2023 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -365,12 +365,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--77
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
@@ -382,23 +377,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
-[]\OT1/cmr/m/n/12 Amazon Web Ser-vi-ces. (s.f.). What is Com-pu-ter Net-wor-king? Re-cu-pe-ra-do de
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-[]\OT1/cmr/m/n/12 Proofpoint. (s.f.). Com-pu-ter Vi-rus. Re-cu-pe-ra-do de $\OML/cmm/m/it/12 https \OT1/cmr/m/n/12 :
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
  []
 
 
-Underfull \hbox (badness 5217) in paragraph at lines 128--129
-\OML/cmm/m/it/12 ==www:proofpoint:com=es=threat \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 reference=computer \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 virus \OT1/cmr/m/n/12 :  [] : \OML/cmm/m/it/12 text \OT1/cmr/m/n/12 =
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
  []
 
 
-Overfull \hbox (1.8114pt too wide) in paragraph at lines 128--129
-\OML/cmm/m/it/12 Un\OT1/cmr/m/n/12 20\OML/cmm/m/it/12 virus \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 inform \OT1/cmr/m/n/12 %[]\OML/cmm/m/it/12 C\OT1/cmr/m/n/12 3 %[]\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 tico \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 es \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 una; un \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 dispositivo \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 o \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 red \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 local:$ 
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+<images/vista-general.png, id=70, 1882.03125pt x 763.85374pt>
+File: images/vista-general.png Graphic file (type png)
+<use images/vista-general.png>
+Package pdftex.def Info: images/vista-general.png  used on input line 126.
+(pdftex.def)             Requested size: 564.61374pt x 229.15788pt.
+
+Overfull \hbox (70.08893pt too wide) in paragraph at lines 126--128
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
+
  []
 
 
@@ -408,25 +418,121 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5] 
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6 <./images/vista-general.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Overfull \hbox (43.60065pt too wide) in paragraph at lines 274--274
+[]    \OT1/cmtt/m/n/12 ;; Funcion de inicializaci^^Son setup, creamos los nodos y se conectan a topologia normal[] 
+ []
+
+
+Overfull \hbox (18.90063pt too wide) in paragraph at lines 274--274
+[]\OT1/cmtt/m/n/12 ;;setup crea los nodos del grafo de manera aleatoria (tomamos una topologia aleatoria)[] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+[]\OT1/cmr/m/n/12 Amazon Web Ser-vi-ces. (s.f.). What is Com-pu-ter Net-wor-king? Re-cu-pe-ra-do de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
+[]\OT1/cmr/m/n/12 Proofpoint. (s.f.). Com-pu-ter Vi-rus. Re-cu-pe-ra-do de $\OML/cmm/m/it/12 https \OT1/cmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 5217) in paragraph at lines 300--301
+\OML/cmm/m/it/12 ==www:proofpoint:com=es=threat \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 reference=computer \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 virus \OT1/cmr/m/n/12 :  [] : \OML/cmm/m/it/12 text \OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (1.8114pt too wide) in paragraph at lines 300--301
+\OML/cmm/m/it/12 Un\OT1/cmr/m/n/12 20\OML/cmm/m/it/12 virus \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 inform \OT1/cmr/m/n/12 %[]\OML/cmm/m/it/12 C\OT1/cmr/m/n/12 3 %[]\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 tico \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 es \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 una; un \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 dispositivo \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 o \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 red \OT1/cmr/m/n/12 %[]20\OML/cmm/m/it/12 local:$ 
+ []
+
+
+Overfull \hbox (48.40707pt too wide) in paragraph at lines 304--305
+[]\OT1/cmr/m/n/12 NetLogo Dic-tio-nary. (s.f.). Re-cu-pe-ra-do de https://ccl.northwestern.edu/netlogo/resources/diccionario.pdf 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 6358 strings out of 476025
- 101056 string characters out of 5796532
+ 6378 strings out of 476025
+ 101336 string characters out of 5796532
  1863388 words of memory out of 5000000
- 26749 multiletter control sequences out of 15000+600000
- 516541 words of font info for 46 fonts, out of 8000000 for 9000
+ 26765 multiletter control sequences out of 15000+600000
+ 516710 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,65p,627b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on main.pdf (5 pages, 395292 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (10 pages, 686062 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

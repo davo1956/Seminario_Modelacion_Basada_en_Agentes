@@ -2,14 +2,25 @@ turtles-own
 [
   dañado?
   resistente?
-  tiempo-infeccion
+  tiempo-fallo
 ]
 
-;;Funcion de inicialización setup, creamos los nodos y se conectan de manera aleatoria.
+;;Funcion de inicialización setup, creamos los nodos y se conectan a topologia cierular.
 to setup
   clear-all
   setup-grafo-aleatorio
   setup-red
+  ask n-of fallo turtles
+    [ esta-infectado ]
+  ask links [ set color white ]
+  reset-ticks
+end
+
+;; Funcion de inicialización setup, creamos los nodos y se conectan a topologia normal
+to setup-b
+  clear-all
+  setup-grafo-aleatorio
+  setup-red2
   ask n-of fallo turtles
     [ esta-infectado ]
   ask links [ set color white ]
@@ -25,10 +36,11 @@ to setup-grafo-aleatorio
     esta-en-riesgo
     set shape "circle"
     set color green
+    set tiempo-fallo random tiempo-checar-fallo
   ]
 end
 
-;;setup para inicializar las conexiones de la red
+;;setup para inicializar las conexiones de la red en topologia circular
 
 to setup-red
  let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
@@ -37,8 +49,27 @@ to setup-red
    ask one-of turtles
    [
       let eleccion (min-one-of (other turtles with [not link-neighbor? myself])
-        [distance myself])
-      if eleccion != nobody [create-link-with eleccion ]
+                     [distance myself])
+      if eleccion != nobody [create-link-to eleccion ]
+    ]
+    repeat 10
+    [
+      layout-circle (sort turtles) max-pxcor - 1
+    ]
+  ]
+end
+
+;;setup para inicializar las conexiones de la red en topologia aleatoria
+
+to setup-red2
+  let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
+  while [count links < numero-aristas ]
+ [
+   ask one-of turtles
+   [
+      let eleccion (min-one-of (other turtles with [not link-neighbor? myself])
+                     [distance myself])
+      if eleccion != nobody [create-link-to eleccion ]
     ]
   ]
 end
@@ -63,19 +94,58 @@ end
 
 ;;Funcion que nos dice si el componente es resistente a fallos o daños.
 to esta-resistente
+
   set dañado? false
   set resistente? true
-  ask my-links [ set color gray ]
+  set color blue
+  ask my-links [ set color gray - 2 ]
+end
+
+;;Metodo principal
+
+to go
+  if all? turtles [not dañado?]
+    [ stop ]
+  ask turtles
+  [
+    set tiempo-fallo tiempo-fallo + 1
+    if tiempo-fallo >= tiempo-checar-fallo
+      [ set tiempo-fallo 0 ]
+  ]
+  contagio
+  checar-problema
+  tick
+end
+
+;;metodo para contagio
+
+to contagio
+  ask turtles with [dañado?]
+    [ ask link-neighbors with [not resistente?]
+        [ if random-float 100 < probabilidad-infeccion
+        [ esta-infectado ] ] ]
+end
+
+to checar-problema
+  ask turtles with [dañado? and tiempo-fallo = 0]
+  [
+    if random 100 < probabilidad-recuperacion
+    [
+      ifelse random 100 < resistencia-fallo-futuro
+        [ esta-resistente ]
+      [ esta-en-riesgo ]
+    ]
+  ]
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-353
+358
 10
-809
-467
+1108
+761
 -1
 -1
-11.0
+3.692
 1
 10
 1
@@ -85,10 +155,10 @@ GRAPHICS-WINDOW
 0
 0
 1
--20
-20
--20
-20
+-100
+100
+-100
+100
 0
 0
 1
@@ -96,15 +166,15 @@ ticks
 30.0
 
 SLIDER
-3
-149
-175
-182
+7
+72
+179
+105
 numero-nodos
 numero-nodos
 0
-100
-3.0
+500
+182.0
 1
 1
 NIL
@@ -113,9 +183,9 @@ HORIZONTAL
 BUTTON
 4
 22
-71
+147
 55
-NIL
+topologia circular
 setup
 NIL
 1
@@ -128,34 +198,148 @@ NIL
 1
 
 SLIDER
-5
-196
-177
-229
+4
+117
+176
+150
 fallo
 fallo
 0
-10
-1.0
+400
+4.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-5
-104
-186
-137
+3
+160
+184
+193
 grado-nodo-minimo
 grado-nodo-minimo
 0
 10
-2.0
+10.0
 1
 1
 NIL
 HORIZONTAL
+
+SLIDER
+8
+272
+211
+305
+tiempo-checar-fallo
+tiempo-checar-fallo
+0
+30
+11.0
+1
+1
+ticks
+HORIZONTAL
+
+SLIDER
+7
+327
+218
+360
+probabilidad-infeccion
+probabilidad-infeccion
+0.0
+10.0
+3.6
+0.1
+1
+%
+HORIZONTAL
+
+SLIDER
+7
+378
+222
+411
+resistencia-fallo-futuro
+resistencia-fallo-futuro
+0.0
+100
+91.0
+1
+1
+%
+HORIZONTAL
+
+SLIDER
+7
+228
+231
+261
+probabilidad-recuperacion
+probabilidad-recuperacion
+0.0
+10.0
+10.0
+0.1
+1
+NIL
+HORIZONTAL
+
+BUTTON
+212
+74
+275
+107
+NIL
+go
+T
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+PLOT
+1114
+11
+1874
+549
+Comportamiento de Red
+tiempo
+Nodos
+0.0
+10.0
+0.0
+100.0
+true
+true
+"" ""
+PENS
+"en riesgo" 1.0 0 -14439633 true "" "plot (count turtles with [not dañado? and not resistente?]) / (count turtles) * 100"
+"infectado" 1.0 0 -2674135 true "" "plot (count turtles with [dañado?]) / (count turtles) * 100"
+"resistente" 1.0 0 -13345367 true "" "plot (count turtles with [resistente?]) / (count turtles) * 100"
+
+BUTTON
+153
+23
+355
+56
+topologia aleatoria normal
+setup-b
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?

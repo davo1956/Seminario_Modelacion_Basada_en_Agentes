@@ -40,7 +40,7 @@ to setup-grafo-aleatorio
   ]
 end
 
-;;setup para inicializar las conexiones de la red en topologia circ
+;;setup para inicializar las conexiones de la red en topologia circular
 
 to setup-red
  let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
@@ -59,7 +59,8 @@ to setup-red
   ]
 end
 
-;;
+;;setup para inicializar las conexiones de la red en topologia aleatoria
+
 to setup-red2
   let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
   while [count links < numero-aristas ]
@@ -138,13 +139,13 @@ to checar-problema
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-353
+358
 10
-812
-470
+1108
+761
 -1
 -1
-11.0
+3.692
 1
 10
 1
@@ -154,10 +155,10 @@ GRAPHICS-WINDOW
 0
 0
 1
--20
-20
--20
-20
+-100
+100
+-100
+100
 0
 0
 1
@@ -165,15 +166,15 @@ ticks
 30.0
 
 SLIDER
-3
-149
-175
-182
+7
+72
+179
+105
 numero-nodos
 numero-nodos
 0
-100
-100.0
+500
+182.0
 1
 1
 NIL
@@ -197,14 +198,14 @@ NIL
 1
 
 SLIDER
-5
-196
-177
-229
+4
+117
+176
+150
 fallo
 fallo
 0
-10
+400
 4.0
 1
 1
@@ -212,25 +213,25 @@ NIL
 HORIZONTAL
 
 SLIDER
-5
-104
-186
-137
+3
+160
+184
+193
 grado-nodo-minimo
 grado-nodo-minimo
 0
 10
-6.0
+10.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-5
-321
-208
-354
+8
+272
+211
+305
 tiempo-checar-fallo
 tiempo-checar-fallo
 0
@@ -243,9 +244,9 @@ HORIZONTAL
 
 SLIDER
 7
-366
+327
 218
-399
+360
 probabilidad-infeccion
 probabilidad-infeccion
 0.0
@@ -257,10 +258,10 @@ probabilidad-infeccion
 HORIZONTAL
 
 SLIDER
-9
-417
-224
-450
+7
+378
+222
+411
 resistencia-fallo-futuro
 resistencia-fallo-futuro
 0.0
@@ -272,10 +273,10 @@ resistencia-fallo-futuro
 HORIZONTAL
 
 SLIDER
-4
-279
+7
 228
-312
+231
+261
 probabilidad-recuperacion
 probabilidad-recuperacion
 0.0
@@ -287,10 +288,10 @@ NIL
 HORIZONTAL
 
 BUTTON
+212
+74
+275
 107
-67
-170
-100
 NIL
 go
 T
@@ -304,10 +305,10 @@ NIL
 1
 
 PLOT
-811
-21
-1011
-171
+1114
+11
+1754
+351
 Comportamiento de Red
 tiempo
 Nodos
@@ -322,6 +323,23 @@ PENS
 "en riesgo" 1.0 0 -14439633 true "" "plot (count turtles with [not dañado? and not resistente?]) / (count turtles) * 100"
 "infectado" 1.0 0 -2674135 true "" "plot (count turtles with [dañado?]) / (count turtles) * 100"
 "resistente" 1.0 0 -13345367 true "" "plot (count turtles with [resistente?]) / (count turtles) * 100"
+
+BUTTON
+153
+23
+355
+56
+topologia aleatoria normal
+setup-b
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
