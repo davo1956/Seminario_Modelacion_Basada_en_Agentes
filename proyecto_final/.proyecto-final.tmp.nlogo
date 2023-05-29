@@ -5,11 +5,22 @@ turtles-own
   tiempo-fallo
 ]
 
-;;Funcion de inicialización setup, creamos los nodos y se conectan de manera aleatoria.
+;;Funcion de inicialización setup, creamos los nodos y se conectan a topologia cierular.
 to setup
   clear-all
   setup-grafo-aleatorio
   setup-red
+  ask n-of fallo turtles
+    [ esta-infectado ]
+  ask links [ set color white ]
+  reset-ticks
+end
+
+;; Funcion de inicialización setup, creamos los nodos y se conectan a topologia normal
+to setup-b
+  clear-all
+  setup-grafo-aleatorio
+  setup-red2
   ask n-of fallo turtles
     [ esta-infectado ]
   ask links [ set color white ]
@@ -29,10 +40,28 @@ to setup-grafo-aleatorio
   ]
 end
 
-;;setup para inicializar las conexiones de la red
+;;setup para inicializar las conexiones de la red en topologia circ
 
 to setup-red
  let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
+  while [count links < numero-aristas ]
+ [
+   ask one-of turtles
+   [
+      let eleccion (min-one-of (other turtles with [not link-neighbor? myself])
+                     [distance myself])
+      if eleccion != nobody [create-link-to eleccion ]
+    ]
+    repeat 10
+    [
+      layout-circle (sort turtles) max-pxcor - 1
+    ]
+  ]
+end
+
+;;
+to setup-red2
+  let numero-aristas (grado-nodo-minimo * numero-nodos) / 2
   while [count links < numero-aristas ]
  [
    ask one-of turtles
@@ -153,9 +182,9 @@ HORIZONTAL
 BUTTON
 4
 22
-71
+147
 55
-NIL
+topologia circular
 setup
 NIL
 1
@@ -258,10 +287,10 @@ NIL
 HORIZONTAL
 
 BUTTON
-93
-22
-156
-55
+107
+67
+170
+100
 NIL
 go
 T
