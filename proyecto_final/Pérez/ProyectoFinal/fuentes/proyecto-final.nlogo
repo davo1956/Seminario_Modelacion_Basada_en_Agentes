@@ -172,9 +172,9 @@ SLIDER
 105
 numero-nodos
 numero-nodos
-0
+2
 500
-13.0
+248.0
 1
 1
 NIL
@@ -204,9 +204,9 @@ SLIDER
 150
 fallo
 fallo
-0
+1
 400
-4.0
+140.0
 1
 1
 NIL
@@ -221,7 +221,7 @@ grado-nodo-minimo
 grado-nodo-minimo
 0
 10
-2.0
+6.0
 1
 1
 NIL
@@ -236,7 +236,7 @@ tiempo-checar-fallo
 tiempo-checar-fallo
 0
 30
-11.0
+30.0
 1
 1
 ticks
@@ -251,7 +251,7 @@ probabilidad-infeccion
 probabilidad-infeccion
 0.0
 10.0
-3.6
+7.6
 0.1
 1
 %
@@ -266,7 +266,7 @@ resistencia-fallo-futuro
 resistencia-fallo-futuro
 0.0
 100
-91.0
+86.0
 1
 1
 %
@@ -281,7 +281,7 @@ probabilidad-recuperacion
 probabilidad-recuperacion
 0.0
 10.0
-10.0
+8.0
 0.1
 1
 NIL
