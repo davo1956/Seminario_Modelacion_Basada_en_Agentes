@@ -172,9 +172,9 @@ SLIDER
 105
 numero-nodos
 numero-nodos
-0
+2
 500
-182.0
+50.0
 1
 1
 NIL
@@ -204,9 +204,9 @@ SLIDER
 150
 fallo
 fallo
-0
+1
 400
-4.0
+1.0
 1
 1
 NIL
@@ -221,7 +221,7 @@ grado-nodo-minimo
 grado-nodo-minimo
 0
 10
-10.0
+3.0
 1
 1
 NIL
@@ -236,7 +236,7 @@ tiempo-checar-fallo
 tiempo-checar-fallo
 0
 30
-20.0
+10.0
 1
 1
 ticks
@@ -251,7 +251,7 @@ probabilidad-infeccion
 probabilidad-infeccion
 0.0
 10.0
-10.0
+5.0
 0.1
 1
 %
@@ -266,7 +266,7 @@ resistencia-fallo-futuro
 resistencia-fallo-futuro
 0.0
 100
-53.0
+10.0
 1
 1
 %
@@ -281,7 +281,7 @@ probabilidad-recuperacion
 probabilidad-recuperacion
 0.0
 10.0
-5.0
+0.0
 0.1
 1
 NIL
@@ -307,8 +307,8 @@ NIL
 PLOT
 1114
 11
-1754
-351
+1874
+549
 Comportamiento de Red
 tiempo
 Nodos

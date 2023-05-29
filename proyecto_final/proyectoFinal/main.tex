@@ -124,7 +124,7 @@ Los objetivos especificos de nuestro proyecto parten del objetivo principal y so
 En terminos generales las especificciones del programa las mencionamos en la sección anterior, pero ahora profundizaremos un poco más en los sliders, el mundo, y el funcionamiento de nuestro modelo.\\
 
 \textbf{\includegraphics[scale = 0.30]{images/vista-general.png}}\\
-Esta es la vista de nuestro modelo (tomando una topologia aleatoria).\\
+Esta es la vista de nuestro modelo (tomando una topologia aleatoria). Con un tamaño de $100$x$100$ con fronteras definidas\\
 
 Como podemos ver tenemos una serie de sliders:\\
 \begin{enumerate}
@@ -281,10 +281,60 @@ El codigo tiene un comentario por cada función en la wue se explica su funciona
 
 Al ejecutar un determinado número de veces nuestro modelo podemos observar lo siguiente:\\
 
-%RESULTADOS CON IMAGENES DE LA EJECUCIÓN.
+
+Con una topología aleatoria, con pocos nodos, y uno como infectado, con probabilidad de recuperacion de $5.0$, tiempo de checar fallo de $5$ ticks, probabilidad de infeccion de $1.8$ y resistencia de fallo futuro de $10$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/image1.png}} Como vemos en el modelo hay aristas que simplemente no son recorridas, el numero de infectados fue menor y por tanto no hubo un colapso en la red. \\
+
+Con una topología aleatoria, con pocos nodos, $1$ como infectados, con probabilidad de recuperacion de $0.0$, tiempo de checar fallo de $10$ ticks, probabilidad de infeccion de $5.0$ y resistencia de fallo futuro de $10$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/images2.png}} Como podemos ver despues de al rededor de $273000$ ticks el sistema colapsa, los nodos estan todos infectados y no existe recuperación, en la grafica se nota solo la linea color rojo.\\
+
+Con una topología aleatoria, con $50$ nodos, $23$ como infectados, con probabilidad de recuperacion de $7.0$, tiempo de checar fallo de $20$ ticks, probabilidad de infeccion de $6.7$ y resistencia de fallo futuro de $50$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/images3.png}} El sistema se comporta de la manera convensional a como queremos que se comporte, el nímero de infectados se minimiza e el sistema se recupera aunque de igual manera existe una conexión en la que no pasa la infección, el sistema se estabiliza.\\
+
+Con una topología aleatoria, con $248$ nodos, $140$ como infectados, con probabilidad de recuperacion de $8.0$, tiempo de checar fallo de $30$ ticks, probabilidad de infeccion de $7.6$ y resistencia de fallo futuro de $86$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/images4.png}} podemos notar que llega un momento en el que el sistema esta todo infectado pero no llega al colapso, son los nodos los que se infectan y se curan en un lapso de tiempo y permiten que el transcurso de recurosos no se vea afectado por los fallos del sistema.\\
+
+
+Ahora ejecutaremos estos mismos parametros pero con una topologia circular:\\
+
+
+Con una topología circular, con pocos nodos, y uno como infectado, con probabilidad de recuperacion de $5.0$, tiempo de checar fallo de $5$ ticks, probabilidad de infeccion de $1.8$ y resistencia de fallo futuro de $10$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/images5.png}} Podemos notar que hay aristas que no son recoorridas por el fallo pero si por el paso de mensajes, de igual manera el sistema no llega a un colapso y es estable, en la grafica podemos ver que el comportamiento es diferente pero al final llega a ser un tanto similar el resusltado.
+
+Con una topología circular, con pocos nodos, $1$ como infectados, con probabilidad de recuperacion de $0.0$, tiempo de checar fallo de $10$ ticks, probabilidad de infeccion de $5.0$ y resistencia de fallo futuro de $10$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/images6.png}} Podemos ver que el sistema colapsa de imgual manera los componentes llegan a estar infectados en un punto al mismo tiempo\\
+
+Con una topología circular, con $50$ nodos, $23$ como infectados, con probabilidad de recuperacion de $7.0$, tiempo de checar fallo de $20$ ticks, probabilidad de infeccion de $6.7$ y resistencia de fallo futuro de $50$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/images7.png}} El sistema se comporta de una buena manera de la cual no llega a fallar del todo.\\
+
+Con una topología aleatoria, con $248$ nodos, $140$ como infectados, con probabilidad de recuperacion de $8.0$, tiempo de checar fallo de $30$ ticks, probabilidad de infeccion de $7.6$ y resistencia de fallo futuro de $86$\% se ve de la siguiente manera:\\
+
+\textbf{\includegraphics[scale = 0.28]{images/images8.png}} El sistema llega a estar completamente infectado, por la probabilidad de de recuperacion tan alta no llega a colapsar pero si es notorio que llega a estar completamente infectado el sistema.\\
+
+Estas son algunas de las variantes de nuestra simulación en la que probamos distintos ecenarios de probabilidades y miramos el comportamiento de nuestro sistema.\\
+
 
 {\color{blue} \subsection*{5- CONCLUSIONES Y REFLEXIONES.}}
 \vspace{1em}
+
+Este modelo me ayudo mucho a comprender con una mejor facilidad el comportamiento de un sistema de redes, es importante de señalar que en sistemas de este tipo para crear este tipo de modelos para verificar su comportamiento antes de armarlo como tal, para muchas empresas del sector privado es importante que sus sistemas sean estables y como se menciono anteriormente, que sean tolerantes a fallos
+por ello tambien es de suma importancia el modelar este tipo de comportmientos, despues de distintas ejecuciones podemos drnos cuenta en que momento es posible el colapso del sistema y asi poder impplementar medidas que nos ayuden a que el dicho sistema no falle en un llamado "fallo total".\\
+
+Es importante señalar que este modelo es una pequeña simulacion del comportamiento de este sistema, a lo que nos lleva a la pregunta principal, ¿Cómo se comportan las diferentes topologías de redes frente a virus o fallos?, bueno gracias a esto ahora podemos responder con una mejor postura a esta pregunta, en primer lugar podemos señalar que no es tan relevante el tipo de Topología de la que estemos hablando, puede
+ser cualquier tipo al final de cuentas es una grafica que tiene aristas y vertices conectados entre si (cabse decir que no estamos hablando de ciclos en graficas) e incluso puede que no sean conexos estos modelos, pero sin importar el tipo de topología, solamente
+podemos decir que el comportamiento del sistema varía más de los demás parametros como nodos infectados, propabilidades de infección, recuperación e incluso vecinos que se ven conectados, tambien cabe señalar que todo este sistema se toma en cuenta en una grafica dirigida, la cuál es sumamente diferente a una grafica no dirigida, ya que en las no dirigidas nuestra grafica manda mensajes y el flujo es de todos a todos mientras que las otras
+seguimos la dirección de las aristas, de hecho esta podria ser otra de las etenciones, esta la vemos mejor en el modelo de NetLogo, para que no sea igual hicimos esta modificación de nuestro sistema para así ver el tipo de comportamiento en un contexto diferente.\\
+
+Este trabajo me ayudo mucho a comprender de mejor manera el como es que se desenvuelve todo lo que rodea a un sistema de redes, desde la investigación de que es, los protocolos, la importancia de que sea estable y como usan mecanismos y algoritmos para que sea más facil de mantener me llamo mucho la atención.\\
+
+
 
 {\color{blue} \subsection*{6- BIBLIOGRAFIA.}}
 \vspace{1em}

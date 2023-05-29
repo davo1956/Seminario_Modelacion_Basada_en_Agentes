@@ -174,7 +174,7 @@ numero-nodos
 numero-nodos
 0
 500
-182.0
+13.0
 1
 1
 NIL
@@ -221,7 +221,7 @@ grado-nodo-minimo
 grado-nodo-minimo
 0
 10
-10.0
+2.0
 1
 1
 NIL
